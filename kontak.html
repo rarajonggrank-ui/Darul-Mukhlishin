@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontak — Pesantren Darul Mukhlisihin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">
+        <img src="Master Logo PPDM.png" alt="Logo Pondok">
+      </div>
+      <div class="logo-text">
+        <strong>Darul Mukhlisihin</strong>
+        <span>Pondok Pesantren Salafiyah</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Beranda</a>
+      <a href="tentang.html">Tentang Kami</a>
+      <a href="kegiatan.html">Kegiatan</a>
+      <a href="kontak.html" class="active">Kontak</a>
+      <a href="pendaftaran.html" class="nav-cta">Daftar Sekarang</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">Beranda</a>
+  <a href="tentang.html" onclick="toggleMenu()">Tentang Kami</a>
+  <a href="kegiatan.html" onclick="toggleMenu()">Kegiatan</a>
+  <a href="kontak.html" onclick="toggleMenu()">Kontak</a>
+  <a href="pendaftaran.html" onclick="toggleMenu()" style="color:#93c5fd;">Daftar Sekarang →</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-badge">Hubungi Kami</div>
+    <h1>Kami Siap<br>Melayani Anda</h1>
+    <p>Punya pertanyaan tentang pesantren atau pendaftaran? Jangan ragu menghubungi kami melalui berbagai saluran komunikasi yang tersedia.</p>
+  </div>
+</div>
+
+<section class="kontak-page section">
+  <div class="container">
+
+    <div class="kontak-grid">
+
+      <div class="kontak-info">
+
+        <div class="reveal">
+          <div class="section-badge" style="margin-bottom:20px;">Informasi Kontak</div>
+          <h2 class="section-title" style="text-align:left;font-size:1.8rem;margin-bottom:24px;">
+            Jangan Ragu<br><span>Menghubungi Kami</span>
+          </h2>
+        </div>
+
+        <div class="kontak-card reveal reveal-delay-1">
+          <div class="kontak-icon blue">📍</div>
+          <div class="kontak-detail">
+            <h4>Alamat Pesantren</h4>
+            <p>Jomblang Rt 01, Mulyodadi <br>Kec. Bambanglipuro, Kab. Bantul,<br>Yogyakarta 55781</p>
+          </div>
+        </div>
+
+        <div class="kontak-card reveal reveal-delay-1">
+          <div class="kontak-icon green">💬</div>
+          <div class="kontak-detail">
+            <h4>WhatsApp (Respon Cepat)</h4>
+            <p>
+              <a href="https://wa.me/6288288880481" target="_blank">+62 882-8888-0481 (Abimanyu) </a><br>
+              <a href="https://wa.me/62895344870503" target="_blank">+62 895-3448-70503 (Nurindah) </a>
+              <br><small style="color:var(--text-light);font-size:0.78rem;">Senin–Sabtu, 08.00–17.00 WIB</small>
+            </p>
+          </div>
+        </div>
+
+        <div class="kontak-card reveal reveal-delay-2">
+          <div class="kontak-icon gold">✉️</div>
+          <div class="kontak-detail">
+            <h4>Email</h4>
+            <p>
+              <a href="mailto:info@darulmukhlisihin.ac.id">pdarulmukhlishin@gmail.com</a><br>
+            </p>
+          </div>
+        </div>
+
+        <div class="kontak-card reveal reveal-delay-3">
+          <div class="kontak-icon green">🕒</div>
+          <div class="kontak-detail">
+            <h4>Jam Kunjungan</h4>
+            <p>
+              Senin – Jumat: 08.00 – 16.00 WIB<br>
+              Sabtu: 08.00 – 12.00 WIB<br>
+              <small style="color:var(--text-light);font-size:0.78rem;">Minggu & Hari Libur Nasional: Tutup</small>
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal" style="margin-top:8px;">
+          <p style="font-size:0.82rem;color:var(--text-light);margin-bottom:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Media Sosial</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="#" style="display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid rgba(59,130,246,0.15);border-radius:var(--radius-sm);padding:10px 16px;font-size:0.82rem;color:var(--text-mid);font-weight:500;transition:all 0.25s;text-decoration:none;" onmouseover="this.style.borderColor='var(--sky)';this.style.color='var(--sky)'" onmouseout="this.style.borderColor='rgba(59,130,246,0.15)';this.style.color='var(--text-mid)'">
+              📸 Instagram
+            </a>
+            <a href="#" style="display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid rgba(59,130,246,0.15);border-radius:var(--radius-sm);padding:10px 16px;font-size:0.82rem;color:var(--text-mid);font-weight:500;transition:all 0.25s;text-decoration:none;" onmouseover="this.style.borderColor='var(--sky)';this.style.color='var(--sky)'" onmouseout="this.style.borderColor='rgba(59,130,246,0.15)';this.style.color='var(--text-mid)'">
+              ▶️ YouTube
+            </a>
+            <a href="#" style="display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid rgba(59,130,246,0.15);border-radius:var(--radius-sm);padding:10px 16px;font-size:0.82rem;color:var(--text-mid);font-weight:500;transition:all 0.25s;text-decoration:none;" onmouseover="this.style.borderColor='var(--sky)';this.style.color='var(--sky)'" onmouseout="this.style.borderColor='rgba(59,130,246,0.15)';this.style.color='var(--text-mid)'">
+              🌐 Facebook
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="map-card">
+          <div class="map-header">
+            <h3>📍 Lokasi Pesantren</h3>
+            <p>Jomblang, Mulyodadi, Kec. Bambanglipuro, Bantul, Daerah Istimewa Yogyakarta</p>
+          </div>
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.4056514282975!2d110.3089195747679!3d-7.956963492067651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7affe6956eedfd%3A0xac992cdbb0ec8b32!2sPondok%20Pesantren%20Darul%20Mukhlisin!5e0!3m2!1sid!2sid!4v1779081087797!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              width="100%"
+              height="360"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Lokasi Pesantren Darul Mukhlisihin">
+            </iframe>
+          </div>
+        </div>
+
+        <div style="background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:var(--radius-lg);padding:36px;margin-top:24px;text-align:center;">
+          <div style="font-size:2.5rem;margin-bottom:12px;">💬</div>
+          <h3 style="color:white;font-size:1.1rem;font-weight:700;margin-bottom:8px;">Butuh Informasi Segera?</h3>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.7;margin-bottom:24px;">
+            Chat langsung dengan admin kami via WhatsApp untuk respons tercepat.
+            Tersedia setiap hari kerja 08.00 – 17.00 WIB.
+          </p>
+          <a
+            href="https://wa.me/6281234567890?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20mengenai%20informasi%20pendaftaran%20Pesantren%20Darul%20Mukhlisihin."
+            target="_blank"
+            class="btn-primary"
+            style="display:inline-flex;font-size:0.9rem;padding:12px 28px;"
+          >
+            💬 Chat WhatsApp Sekarang
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <img src="Master Logo PPDM.png" alt="Logo Pondok"/>
+          <div class="logo-text">
+            <strong>Darul Mukhlisihin</strong>
+            <span>Pondok Pesantren Modern</span>
+          </div>
+        </div>
+        <p>Membentuk generasi yang berilmu, beramal sholeh, berdakwah, bersabar dan tawakal</p>
+        <div class="socials">
+          <a href="#" class="social-btn">📸</a>
+          <a href="#" class="social-btn">▶️</a>
+          <a href="#" class="social-btn">🌐</a>
+          <a href="#" class="social-btn">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang Kami</a></li>
+          <li><a href="kegiatan.html">Kegiatan</a></li>
+          <li><a href="pendaftaran.html">Pendaftaran</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak Cepat</h4>
+        <ul>
+          <li><a href="tel:+62 882-8888-0481">📞 +62 882-8888-0481</a></li>
+          <li><a href="https://wa.me/6288288880481">💬 WhatsApp Kami</a></li>
+          <li><a href="pdarulmukhlishin@gmail.com">✉️ Gmail Kami</a></li>
+          <li><a href="kontak.html">📍 Lihat Lokasi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Pesantren Darul Mukhlisihin. Hak Cipta Dilindungi.</p>
+      <span>Jomblang, Mulyodadi, Kec. Bambanglipuro, Bantul, Daerah Istimewa Yogyakarta</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

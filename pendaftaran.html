@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pendaftaran — Pesantren Darul Mukhlisihin</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .steps-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 48px;
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .step-num {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(59,130,246,0.12);
+      border: 2px solid rgba(59,130,246,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-light);
+      transition: all 0.3s;
+    }
+    .step.active .step-num {
+      background: linear-gradient(135deg, var(--sky), var(--blue));
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 4px 16px rgba(59,130,246,0.4);
+    }
+    .step-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+    .step.active .step-label { color: var(--sky); }
+    .step-line {
+      width: 60px; height: 2px;
+      background: rgba(59,130,246,0.15);
+      margin: 0 8px;
+    }
+
+    .info-box {
+      background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(26,75,140,0.04));
+      border: 1px solid rgba(59,130,246,0.15);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .info-box .info-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+    .info-box p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.7; }
+    .info-box strong { color: var(--blue); }
+
+    .syarat-list {
+      background: var(--off-white);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      margin-top: 40px;
+    }
+    .syarat-list h4 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+    .syarat-list ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .syarat-list ul li {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .syarat-list ul li::before {
+      content: '✓';
+      position: absolute; left: 0;
+      color: #10b981;
+      font-weight: 700;
+    }
+
+    @media (max-width: 600px) {
+      .syarat-list ul { grid-template-columns: 1fr; }
+      .step-line { width: 30px; }
+      .step-label { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">
+        <img src="Master Logo PPDM.png" alt="Logo Pondok">
+      </div>
+      <div class="logo-text">
+        <strong>Darul Mukhlisihin</strong>
+        <span>Pondok Pesantren Salafiyah</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Beranda</a>
+      <a href="tentang.html">Tentang Kami</a>
+      <a href="kegiatan.html">Kegiatan</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="pendaftaran.html" class="nav-cta active">Daftar Sekarang</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">Beranda</a>
+  <a href="tentang.html" onclick="toggleMenu()">Tentang Kami</a>
+  <a href="kegiatan.html" onclick="toggleMenu()">Kegiatan</a>
+  <a href="kontak.html" onclick="toggleMenu()">Kontak</a>
+  <a href="pendaftaran.html" onclick="toggleMenu()" style="color:#93c5fd;">Daftar Sekarang →</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-badge">Penerimaan Santri Baru</div>
+    <h1>Formulir<br>Pendaftaran</h1>
+    <p>Tahun Ajaran 2026/2027 — Isi formulir dengan lengkap dan benar. Tim kami akan menghubungi dalam 2×24 jam.</p>
+  </div>
+</div>
+
+<section class="pendaftaran-page section">
+  <div class="container">
+
+    <!-- Steps -->
+    <div class="steps-bar reveal">
+      <div class="step active">
+        <div class="step-num">1</div>
+        <span class="step-label">Data Diri</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <span class="step-label">Verifikasi</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <span class="step-label">Konfirmasi</span>
+      </div>
+    </div>
+
+    <div class="form-container reveal">
+
+      <div class="info-box">
+        <div class="info-icon">📋</div>
+        <p>
+          Harap mengisi semua field yang ditandai dengan <strong>*</strong>.
+          Pastikan nomor WhatsApp aktif agar kami dapat menghubungi Anda untuk proses selanjutnya.
+          Pendaftaran online ini merupakan tahap awal — calon santri tetap wajib hadir untuk tes seleksi.
+        </p>
+      </div>
+
+      <div class="form-header">
+        <div class="section-badge">Formulir Online</div>
+        <h2>Data Calon Santri</h2>
+        <p>Tahun Ajaran 2026/2027 ·</p>
+      </div>
+
+      <div class="success-msg" id="successMsg">
+        <div class="success-icon">✅</div>
+        <h3>Pendaftaran Berhasil Dikirim!</h3>
+        <p>
+          Terima kasih telah mendaftarkan putra/putri Anda ke Pesantren Darul Mukhlisihin.<br>
+          Tim kami akan menghubungi Anda melalui WhatsApp dalam 2×24 jam.<br><br>
+          <strong>Nomor Registrasi:</strong> <span id="regNumber" style="color:var(--sky);font-weight:700;"></span>
+        </p>
+        <br>
+        <a href="index.html" class="btn-primary" style="display:inline-flex;width:auto;">← Kembali ke Beranda</a>
+      </div>
+
+      <form id="regForm" novalidate>
+
+        <div class="form-group" id="grp-nama">
+          <label>Nama Lengkap Calon Santri <span>*</span></label>
+          <input type="text" id="nama" placeholder="Contoh: Muhammad Abdurrahman Al-Faruq" />
+          <div class="error-msg">Nama lengkap tidak boleh kosong.</div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" id="grp-tempatlahir">
+            <label>Tempat Lahir <span>*</span></label>
+            <input type="text" id="tempatlahir" placeholder="Kota kelahiran" />
+            <div class="error-msg">Tempat lahir wajib diisi.</div>
+          </div>
+          <div class="form-group" id="grp-tgllahir">
+            <label>Tanggal Lahir <span>*</span></label>
+            <input type="date" id="tgllahir" />
+            <div class="error-msg">Tanggal lahir wajib diisi.</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" id="grp-jenjang">
+            <label>Jenjang Pendidikan <span>*</span></label>
+            <select id="jenjang">
+              <option value="">-- Pilih Jenjang --</option>
+              <option value="mts">MTs (Madrasah Tsanawiyah)</option>
+              <option value="ma">MA (Madrasah Aliyah)</option>
+            </select>
+            <div class="error-msg">Pilih jenjang pendidikan.</div>
+          </div>
+          <div class="form-group" id="grp-kelamin">
+            <label>Jenis Kelamin <span>*</span></label>
+            <select id="kelamin">
+              <option value="">-- Pilih --</option>
+              <option value="L">Laki-laki</option>
+              <option value="P">Perempuan</option>
+            </select>
+            <div class="error-msg">Pilih jenis kelamin.</div>
+          </div>
+        </div>
+
+        <div class="form-group" id="grp-alamat">
+          <label>Alamat Lengkap <span>*</span></label>
+          <textarea id="alamat" placeholder="Jalan, RT/RW, Desa/Kelurahan, Kecamatan, Kabupaten/Kota, Provinsi"></textarea>
+          <div class="error-msg">Alamat lengkap tidak boleh kosong.</div>
+        </div>
+
+        <div class="form-group" id="grp-wali">
+          <label>Nama Orang Tua / Wali <span>*</span></label>
+          <input type="text" id="wali" placeholder="Nama orang tua atau wali" />
+          <div class="error-msg">Nama wali tidak boleh kosong.</div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" id="grp-hp">
+            <label>Nomor WhatsApp <span>*</span></label>
+            <input type="tel" id="hp" placeholder="08xxxxxxxxxx" />
+            <div class="error-msg">Nomor HP wajib diisi (min. 10 digit).</div>
+          </div>
+          <div class="form-group" id="grp-email">
+            <label>Alamat Email <span>*</span></label>
+            <input type="email" id="email" placeholder="contoh@email.com" />
+            <div class="error-msg">Format email tidak valid.</div>
+          </div>
+        </div>
+
+        <div class="form-group" id="grp-program">
+          <label>Program yang Diminati <span>*</span></label>
+          <select id="program">
+            <option value="">-- Pilih Program Utama --</option>
+            <option value="tahfidz">Tahfidz Al-Qur'an</option>
+            <option value="kitab">Kajian Kitab Kuning</option>
+            <option value="reguler">Reguler (Umum)</option>
+          </select>
+          <div class="error-msg">Pilih program yang diminati.</div>
+        </div>
+
+        <div class="form-group" id="grp-motivasi">
+          <label>Motivasi Mendaftar <span>*</span></label>
+          <textarea id="motivasi" placeholder="Tuliskan motivasi putra/putri Anda mendaftar ke Pesantren Darul Mukhlisihin..." style="min-height:100px;"></textarea>
+          <div class="error-msg">Mohon tuliskan motivasi pendaftaran.</div>
+        </div>
+        
+        <button type="button" class="btn-submit" onclick="submitForm()">
+          <span id="btnText">Kirim Pendaftaran</span>
+          <span id="btnIcon">→</span>
+        </button>
+
+      </form>
+
+      
+      <div class="syarat-list">
+        <h4>📋 Berkas yang Disiapkan untuk Tes Seleksi:</h4>
+        <ul>
+          <li>Fotokopi Akta Kelahiran (2 lembar)</li>
+          <li>Fotokopi Kartu Keluarga (2 lembar)</li>
+          <li>Pas foto 3×4 (6 lembar, background biru)</li>
+          <li>Rapor semester terakhir (2 semester)</li>
+          <li>Surat rekomendasi dari sekolah asal</li>
+          <li>Sertifikat hafalan (jika ada)</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <img src="Master Logo PPDM.png" alt="Logo Pondok"/>
+          <div class="logo-text">
+            <strong>Darul Mukhlisihin</strong>
+            <span>Pondok Pesantren Salafiyah</span>
+          </div>
+        </div>
+        <p>Membentuk generasi yang berilmu, beramal sholeh, berdakwah, bersabar dan tawakal</p>
+        <div class="socials">
+          <a href="#" class="social-btn">📸</a>
+          <a href="#" class="social-btn">▶️</a>
+          <a href="#" class="social-btn">🌐</a>
+          <a href="#" class="social-btn">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang Kami</a></li>
+          <li><a href="kegiatan.html">Kegiatan</a></li>
+          <li><a href="pendaftaran.html">Pendaftaran</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Info Pendaftaran</h4>
+        <ul>
+          <li><a href="tel:+62 882-8888-0481">📞 +62 882-8888-0481</a></li>
+          <li><a href="https://wa.me/6288288880481">💬 WhatsApp Kami</a></li>
+          <li><a href="mailto:pendaftaran@darulmukhlisihin.ac.id">✉️ Email Pendaftaran</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Pesantren Darul Mukhlisihin. Hak Cipta Dilindungi.</p>
+      <span>Jomblang, Mulyodadi, Kec. Bambanglipuro, Bantul, Daerah Istimewa Yogyakarta</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+function validateField(id, groupId, validator) {
+  const val = document.getElementById(id).value.trim();
+  const grp = document.getElementById(groupId);
+  const ok = validator(val);
+  grp.classList.toggle('error', !ok);
+  return ok;
+}
+
+function submitForm() {
+  let valid = true;
+
+  valid = validateField('nama',       'grp-nama',        v => v.length >= 3) && valid;
+  valid = validateField('tempatlahir','grp-tempatlahir', v => v.length >= 2) && valid;
+  valid = validateField('tgllahir',   'grp-tgllahir',    v => v.length > 0)  && valid;
+  valid = validateField('jenjang',    'grp-jenjang',     v => v !== '')       && valid;
+  valid = validateField('kelamin',    'grp-kelamin',     v => v !== '')       && valid;
+  valid = validateField('alamat',     'grp-alamat',      v => v.length >= 10) && valid;
+  valid = validateField('wali',       'grp-wali',        v => v.length >= 3)  && valid;
+  valid = validateField('hp',         'grp-hp',          v => /^[0-9]{10,15}$/.test(v)) && valid;
+  valid = validateField('email',      'grp-email',       v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) && valid;
+  valid = validateField('program',    'grp-program',     v => v !== '')       && valid;
+  valid = validateField('motivasi',   'grp-motivasi',    v => v.length >= 10) && valid;
+
+  if (!valid) {
+    const firstErr = document.querySelector('.form-group.error');
+    if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  // Animate button
+  const btn = document.querySelector('.btn-submit');
+  btn.innerHTML = '<span>Mengirim...</span> <span style="animation:spin 0.8s linear infinite;display:inline-block">⏳</span>';
+  btn.disabled = true;
+
+  setTimeout(() => {
+    const regNum = 'DM-' + new Date().getFullYear() + '-' + Math.floor(10000 + Math.random() * 90000);
+    document.getElementById('regNumber').textContent = regNum;
+    document.getElementById('regForm').style.display = 'none';
+    document.querySelector('.info-box').style.display = 'none';
+    document.querySelector('.form-header').style.display = 'none';
+    document.querySelector('.syarat-list').style.display = 'none';
+    document.querySelector('.steps-bar') && (document.querySelector('.steps-bar').style.display = 'none');
+
+    const successEl = document.getElementById('successMsg');
+    successEl.classList.add('show');
+    successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 2000);
+}
+</script>
+<style>
+@keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</body>
+</html>

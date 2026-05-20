@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang Kami — Pesantren Darul Mukhlisihin</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+/* ══════════════════════════════════════════════
+   1. HERO — Compact, Premium, Minimalis
+   ══════════════════════════════════════════════ */
+.tentang-hero {
+  position: relative;
+  padding: 130px 0 90px;
+  overflow: hidden;
+  background: linear-gradient(165deg,
+    #060f1e 0%,
+    #0d1f3c 30%,
+    #122b52 60%,
+    #1a3a6b 100%
+  );
+}
+
+/* Pattern geometri islami samar */
+.tentang-hero::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 0%,
+    rgba(245,247,250,0.92) 100%
+  );
+
+  filter: blur(8px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.tentang-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -60px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-glow-gold {
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.tentang-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-inner {
+  max-width: 640px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.hero-eyebrow .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(201,168,76,0.6);
+}
+.hero-eyebrow span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
+.hero-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.18;
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+.hero-heading .accent {
+  background: linear-gradient(135deg, #93c5fd, #c9a84c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-divider {
+  width: 48px; height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+
+.hero-sub {
+  font-size: 0.97rem;
+  color: rgba(255,255,255,0.58);
+  line-height: 1.85;
+  max-width: 500px;
+}
+
+.hero-fade-bottom {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(240,246,255,0.6) 70%,
+    #f0f6ff 100%
+  );
+  pointer-events: none;
+}
+/
+.pengasuh-section {
+  background: #f0f6ff;
+  padding: 80px 0 72px;
+}
+
+.pengasuh-wrapper {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.pengasuh-photo-card { position: relative; }
+
+.pengasuh-photo-frame {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 56px rgba(10,22,40,0.2);
+  position: relative;
+  aspect-ratio: 3/3.8;
+  background: linear-gradient(160deg, #0d1f3c, #1a4b8c);
+}
+.pengasuh-photo-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.pengasuh-photo-frame::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(8,18,36,0.9) 0%, transparent 100%);
+}
+.pengasuh-name-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 26px 26px 24px;
+  z-index: 2;
+}
+.pengasuh-name-overlay h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.pengasuh-name-overlay .role-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(59,130,246,0.28);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59,130,246,0.38);
+  color: #bfdbfe;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+
+.pengasuh-photo-card::before {
+  content: '';
+  position: absolute;
+  top: -12px; left: -12px; right: 12px; bottom: 12px;
+  border: 1.5px solid rgba(59,130,246,0.16);
+  border-radius: 24px;
+  z-index: 0;
+}
+
+.pengasuh-bio { padding-top: 4px; }
+.pengasuh-bio .section-badge { margin-bottom: 14px; }
+
+.pengasuh-bio h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.subtitle-line {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 26px;
+}
+.subtitle-line span {
+  font-size: 0.82rem;
+  color: var(--sky);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.subtitle-line::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(to right, rgba(59,130,246,0.25), transparent);
+}
+
+.quote-block {
+  background: linear-gradient(135deg, rgba(59,130,246,0.06), rgba(26,75,140,0.03));
+  border-left: 3px solid var(--sky);
+  border-radius: 0 12px 12px 0;
+  padding: 18px 22px;
+  margin-bottom: 22px;
+}
+.quote-block p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--navy);
+  line-height: 1.75;
+}
+.quote-block cite {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.74rem;
+  color: var(--sky);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.bio-text {
+  font-size: 0.94rem;
+  color: var(--text-mid);
+  line-height: 1.9;
+  margin-bottom: 14px;
+}
+
+.bio-stats {
+  display: flex;
+  margin-top: 28px;
+  border: 1px solid rgba(59,130,246,0.12);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+.bio-stat {
+  flex: 1;
+  padding: 16px 10px;
+  text-align: center;
+  border-right: 1px solid rgba(59,130,246,0.1);
+}
+.bio-stat:last-child { border-right: none; }
+.bio-stat strong {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+  background: linear-gradient(135deg, var(--sky), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.bio-stat span { font-size: 0.66rem; color: var(--text-light); line-height: 1.4; }
+
+
+.profil-section {
+  background: #fff;
+  padding: 80px 0;
+}
+
+.profil-intro {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 60px;
+}
+.profil-intro .section-badge { margin-bottom: 14px; }
+.profil-intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.profil-intro h2 span { color: var(--sky); }
+.profil-intro p {
+  font-size: 0.97rem;
+  color: var(--text-mid);
+  line-height: 1.85;
+}
+
+.profil-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 64px;
+}
+
+.profil-card-item {
+  background: linear-gradient(160deg, #f8fbff 0%, #fff 100%);
+  border: 1px solid rgba(59,130,246,0.1);
+  border-radius: 18px;
+  padding: 32px 26px;
+  box-shadow: 0 4px 24px rgba(10,22,40,0.06);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.profil-card-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--sky), var(--blue));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.profil-card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(10,22,40,0.12);
+  border-color: rgba(59,130,246,0.18);
+}
+.profil-card-item:hover::before { transform: scaleX(1); }
+
+.profil-card-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(26,75,140,0.06));
+}
+.profil-card-item h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.profil-card-item p {
+  font-size: 0.86rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+}
+
+/* Quote islami strip */
+.profil-quote-strip {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  border-radius: 20px;
+  padding: 40px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 64px;
+}
+.profil-quote-strip::before {
+  content: '❝';
+  position: absolute;
+  top: -20px; left: 20px;
+  font-size: 10rem;
+  color: rgba(255,255,255,0.04);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+.profil-quote-strip .arabic {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: var(--gold-light);
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+}
+.profil-quote-strip .translation {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+  font-style: italic;
+}
+
+.cabang-title-wrap { text-align: center; margin-bottom: 36px; }
+.cabang-title-wrap h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  color: var(--navy);
+  line-height: 1.3;
+}
+.cabang-title-wrap h3 span { color: var(--sky); }
+
+.cabang-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.cabang-card {
+  background: #f8fbff;
+  border-radius: 16px;
+  padding: 28px 20px;
+  border: 1px solid rgba(59,130,246,0.1);
+  transition: var(--transition);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cabang-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(59,130,246,0.04), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.cabang-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(10,22,40,0.1);
+  border-color: rgba(59,130,246,0.22);
+}
+.cabang-card:hover::after { opacity: 1; }
+.cabang-num {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--sky), var(--blue));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.95rem; font-weight: 800;
+  color: #fff; margin: 0 auto 12px;
+  box-shadow: 0 4px 14px rgba(59,130,246,0.32);
+  position: relative; z-index: 1;
+}
+.cabang-label {
+  font-size: 0.66rem; color: var(--sky); font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;
+  position: relative; z-index: 1;
+}
+.cabang-card h4 {
+  font-size: 0.88rem; font-weight: 700; color: var(--navy);
+  margin-bottom: 6px; position: relative; z-index: 1;
+}
+.cabang-card p {
+  font-size: 0.74rem; color: var(--text-light);
+  line-height: 1.6; position: relative; z-index: 1;
+}
+
+.sejarah-section {
+  background: linear-gradient(180deg, #f0f6ff 0%, #fff 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+.sejarah-section::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,130,246,0.05), transparent 70%);
+  pointer-events: none;
+}
+
+.sejarah-inner {
+  max-width: 820px; 
+  margin: 0 auto;
+}
+
+/* Desktop: lebih lebar */
+@media (min-width: 1024px) {
+  .sejarah-inner {
+    max-width: 100%;  
+  }
+}
+
+.sejarah-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+.sejarah-header .section-badge { margin-bottom: 14px; }
+.sejarah-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.sejarah-header h2 span { color: var(--sky); }
+.sejarah-header .header-line {
+  width: 56px; height: 2px;
+  background: linear-gradient(90deg, var(--sky), var(--gold));
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+.sejarah-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 52px 56px;
+  box-shadow: 0 8px 40px rgba(10,22,40,0.07);
+  border: 1px solid rgba(59,130,246,0.08);
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .sejarah-card {
+    padding: 64px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .sejarah-opening {
+    grid-column: 1 / -1;
+    padding-bottom: 32px;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(59,130,246,0.1);
+  }
+
+  .sejarah-body {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 56px;
+  }
+
+  .sejarah-closing {
+    grid-column: 1 / -1;
+  }
+}
+
+.sejarah-card::before {
+  content: '﷽';
+  position: absolute;
+  top: 24px; right: 28px;
+  font-size: 1.1rem;
+  color: rgba(59,130,246,0.12);
+  letter-spacing: -0.02em;
+}
+
+.sejarah-opening {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.18rem;
+  color: var(--navy);
+  line-height: 1.75;
+  font-style: italic;
+  margin-bottom: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(59,130,246,0.1);
+}
+
+.sejarah-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sejarah-para {
+  font-size: 0.96rem;
+  color: var(--text-mid);
+  line-height: 2;
+}
+.sejarah-para strong { color: var(--navy); font-weight: 700; }
+
+.sejarah-body .sejarah-para:first-child::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--sky);
+  float: left;
+  line-height: 0.75;
+  margin: 6px 10px 0 0;
+  padding: 2px 4px;
+}
+
+.sejarah-closing {
+  margin-top: 36px;
+  padding: 22px 28px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.06), rgba(26,75,140,0.03));
+  border-radius: 12px;
+  border-left: 3px solid var(--gold);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.sejarah-closing .closing-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.sejarah-closing p {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+  font-style: italic;
+}
+.sejarah-closing p strong { color: var(--navy); font-style: normal; }
+
+.vm-section { background: #f0f6ff; padding: 80px 0; }
+.vm-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 28px;
+  margin-top: 48px;
+}
+.visi-card {
+  background: linear-gradient(160deg, var(--navy) 0%, #1a4b8c 100%);
+  border-radius: 20px;
+  padding: 48px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.visi-card::before {
+  content: '"';
+  position: absolute;
+  top: -20px; right: 12px;
+  font-size: 13rem;
+  font-family: 'Playfair Display', serif;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  pointer-events: none;
+}
+.visi-card .vm-icon-lg { font-size: 2rem; margin-bottom: 18px; }
+.visi-card h3 {
+  font-size: 0.68rem; font-weight: 700;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase; letter-spacing: 0.14em;
+  margin-bottom: 18px;
+}
+.visi-card p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.08rem;
+  color: #fff;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.misi-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 48px 40px;
+  box-shadow: 0 4px 24px rgba(10,22,40,0.06);
+  border: 1px solid rgba(59,130,246,0.08);
+}
+.misi-card h3 {
+  font-size: 0.68rem; font-weight: 700;
+  color: var(--text-light); text-transform: uppercase;
+  letter-spacing: 0.14em; margin-bottom: 26px;
+  display: flex; align-items: center; gap: 10px;
+}
+.misi-card h3::after {
+  content: ''; flex: 1; height: 1px;
+  background: rgba(59,130,246,0.13);
+}
+.misi-list { display: flex; flex-direction: column; gap: 14px; }
+.misi-item { display: flex; gap: 14px; align-items: flex-start; }
+.misi-num {
+  width: 26px; height: 26px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(26,75,140,0.07));
+  border: 1px solid rgba(59,130,246,0.18);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.66rem; font-weight: 800; color: var(--sky);
+  flex-shrink: 0; margin-top: 3px;
+}
+.misi-item p { font-size: 0.89rem; color: var(--text-mid); line-height: 1.75; }
+
+
+@media (max-width: 1024px) {
+  .pengasuh-wrapper { grid-template-columns: 300px 1fr; gap: 48px; }
+  .profil-cards { grid-template-columns: 1fr 1fr; }
+  .cabang-grid { grid-template-columns: repeat(2, 1fr); }
+  .vm-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .pengasuh-wrapper { grid-template-columns: 1fr; }
+  .pengasuh-photo-card::before { display: none; }
+  .profil-cards { grid-template-columns: 1fr; }
+  .profil-quote-strip { padding: 30px 24px; }
+  .sejarah-card { padding: 36px 28px; }
+  .bio-stats { flex-wrap: wrap; }
+  .bio-stat { min-width: 50%; border-bottom: 1px solid rgba(59,130,246,0.08); }
+}
+@media (max-width: 520px) {
+  .cabang-grid { grid-template-columns: 1fr; }
+  .tentang-hero { padding: 110px 0 72px; }
+  .sejarah-body .sejarah-para:first-child::first-letter { display: none; }
+}
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="Master Logo PPDM.png" alt="Logo Pondok"/>
+      <div class="logo-text">
+        <strong>Darul Mukhlisihin</strong>
+        <span>Pondok Pesantren Salafiyah</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Beranda</a>
+      <a href="tentang.html" class="active">Tentang Kami</a>
+      <a href="kegiatan.html">Kegiatan</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="pendaftaran.html" class="nav-cta">Daftar Sekarang</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">Beranda</a>
+  <a href="tentang.html" onclick="toggleMenu()">Tentang Kami</a>
+  <a href="kegiatan.html" onclick="toggleMenu()">Kegiatan</a>
+  <a href="kontak.html" onclick="toggleMenu()">Kontak</a>
+  <a href="pendaftaran.html" onclick="toggleMenu()" style="color:#93c5fd;">Daftar Sekarang →</a>
+</div>
+
+<div class="tentang-hero">
+  <div class="hero-glow-gold"></div>
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="hero-eyebrow">
+        <div class="dot"></div>
+        <span>Tentang Kami</span>
+      </div>
+
+      <h1 class="hero-heading">
+        Mengenal Lebih Dekat<br>
+        <span class="accent">Darul Mukhlisihin</span>
+      </h1>
+
+      <div class="hero-divider"></div>
+
+      <p class="hero-sub">
+    </div>
+  </div>
+  <div class="hero-fade-bottom"></div>
+</div>
+
+<section class="pengasuh-section">
+  <div class="container">
+    <div class="pengasuh-wrapper">
+
+      <!-- Foto -->
+      <div class="pengasuh-photo-card reveal">
+        <div class="pengasuh-photo-frame">
+         
+          <img
+            src="Bapak Ibuk.jpeg"
+            alt="Kyai Muchsin dan Ibu Nyai Nur Latifah"
+            onerror="this.style.display='none'"
+          />
+          <div class="pengasuh-name-overlay">
+            <h3>Kyai Muchsin &<br>Ibu Nyai Nur Latifah</h3>
+            <span class="role-tag">✦ Pengasuh Pondok Pesantren</span>
+          </div>
+        </div>
+      </div>
+
+     
+      <div class="pengasuh-bio reveal reveal-delay-2">
+        <div class="section-badge">Pengasuh</div>
+        <h2>Kyai Muchsin &<br>Ibu Nyai Nur Latifah</h2>
+        <div class="subtitle-line">
+          <span>Pengasuh PPDM Darul Mukhlisihin</span>
+        </div>
+
+        <div class="quote-block">
+          <p>"Sepiro leh mu ngrekso Qur'an, semono kui Gusti Allah le paring kamulyan"</p>
+          <cite>— Kyai Muchsin</cite>
+        </div>
+
+        <p class="bio-text" style="text-align: justify;">
+          Pondok Pesantren Darul Mukhlisihin diasuh oleh Kyai Muchsin dan
+          Ibu Nyai Nur Latifah, pasangan ulama dengan latar belakang pendidikan
+          pesantren salaf yang kuat. Keduanya dikenal sebagai figur yang tawadhu', penuh kasih
+          sayang kepada para santri, sekaligus tegas dalam menegakkan nilai-nilai keislaman di
+          lingkungan pesantren.
+        </p>
+        <p class="bio-text" style="text-align: justify;">
+          Di bawah kepemimpinan beliau berdua, PPDM telah berkembang dari satu pusat menjadi
+          empat cabang aktif — wujud nyata dari semangat dakwah dan pengabdian tiada henti
+          kepada umat.
+        </p>
+
+        <div class="bio-stats">
+          <div class="bio-stat">
+            <strong>1</strong>
+            <span>Pusat<br>Jomblang</span>
+          </div>
+          <div class="bio-stat">
+            <strong>3</strong>
+            <span>Cabang<br>Aktif</span>
+          </div>
+          <div class="bio-stat">
+            <strong>Salaf</strong>
+            <span>Metode<br>Pengajaran</span>
+          </div>
+          <div class="bio-stat">
+            <strong>Al-Qur'an</strong>
+            <span>Program<br>Utama</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="profil-section">
+  <div class="container">
+
+    <div class="profil-intro reveal">
+      <div class="section-badge">Profil Lembaga</div>
+      <h2>Pondok Pesantren<br><span>Darul Mukhlisihin</span></h2>
+      <p>
+        Pesantren berbasis Al-Qur'an dan kajian kitab klasik yang memadukan sistem tradisional (salaf)
+        dengan pendekatan modern — membentuk santri berilmu, berakhlak, mandiri, dan siap berdakwah
+        di tengah masyarakat.
+      </p>
+    </div>
+
+    <div class="profil-cards">
+
+      <div class="profil-card-item reveal reveal-delay-1">
+        <div class="profil-card-icon">📖</div>
+        <h4>Berbasis Al-Qur'an</h4>
+        <p style="text-align: justify;">
+          Program tahsin dan tahfidz Al-Qur'an menjadi pondasi utama pendidikan di PPDM —
+          membentuk santri yang tidak hanya hafal, tetapi juga memahami dan mengamalkan
+          isi Al-Qur'an dalam kehidupan sehari-hari.
+        </p>
+      </div>
+
+      <div class="profil-card-item reveal reveal-delay-2">
+        <div class="profil-card-icon">📚</div>
+        <h4>Kajian Kitab Kuning</h4>
+        <p style="text-align: justify;">
+          Kurikulum kitab kuning yang sistematis mencakup fiqh, aqidah, akhlak, tafsir,
+          hadits, dan ilmu bahasa Arab — menjaga khazanah keilmuan Islam klasik tetap
+          hidup dan relevan di era modern.
+        </p>
+      </div>
+
+      <div class="profil-card-item reveal reveal-delay-3">
+        <div class="profil-card-icon">🌱</div>
+        <h4>Tradisi Salaf Modern</h4>
+        <p style="text-align: justify;">
+          Memadukan pendekatan tradisional pesantren salaf yang hangat dan kekeluargaan
+          dengan metode pembelajaran modern yang efektif — menjaga nilai tanpa kehilangan
+          relevansi zaman.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="profil-quote-strip reveal">
+      <div class="arabic">طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</div>
+      <div class="translation">"Menuntut ilmu adalah kewajiban bagi setiap muslim." — HR. Ibnu Majah</div>
+    </div>
+
+    <div class="reveal">
+      <div class="cabang-title-wrap">
+        <div class="section-badge" style="margin-bottom:12px;">Jaringan Pesantren</div>
+        <h3>Pusat & Cabang <span>PPDM</span></h3>
+      </div>
+      <div class="cabang-grid">
+
+        <div class="cabang-card reveal reveal-delay-1">
+          <div class="cabang-num">1</div>
+          <div class="cabang-label">Pusat</div>
+          <h4>PPDM Jomblang</h4>
+          <p>Pesantren induk dan pusat kegiatan utama, tempat tinggal pengasuh sejak awal berdiri.</p>
+        </div>
+
+        <div class="cabang-card reveal reveal-delay-2">
+          <div class="cabang-num">2</div>
+          <div class="cabang-label">Cabang</div>
+          <h4>PPDM Pangkah</h4>
+          <p>Cabang pertama sebagai wujud perluasan dakwah di wilayah Pangkah.</p>
+        </div>
+
+        <div class="cabang-card reveal reveal-delay-3">
+          <div class="cabang-num">3</div>
+          <div class="cabang-label">Cabang</div>
+          <h4>PPDM Pulutan</h4>
+          <p>Cabang kedua yang menjangkau santri di wilayah Pulutan dan sekitarnya.</p>
+        </div>
+
+        <div class="cabang-card reveal reveal-delay-3">
+          <div class="cabang-num">4</div>
+          <div class="cabang-label">Cabang</div>
+          <h4>PPDM Prenggan</h4>
+          <p>Cabang ketiga — melanjutkan misi dakwah dan pendidikan Islam yang terus meluas.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="sejarah-section">
+  <div class="container">
+    <div class="sejarah-inner">
+
+      <div class="sejarah-header reveal">
+        <div class="section-badge">Perjalanan Kami</div>
+        <h2>Sejarah <span>Singkat</span></h2>
+        <div class="header-line"></div>
+      </div>
+
+      <div class="sejarah-card reveal">
+
+        <div class="sejarah-body">
+
+          <p class="sejarah-para" style="text-align: justify;">
+            Pondok Pesantren Darul Mukhlishin (PPDM) merupakan lembaga pendidikan Islam yang berada di wilayah Bambanglipuro, 
+            Bantul, Daerah Istimewa Yogyakarta. Letaknya berada di kawasan yang asri dan religius serta memiliki akses 
+            yang cukup mudah dijangkau oleh masyarakat dari berbagai daerah. Kehadiran pondok pesantren ini 
+            menjadi bagian dari upaya menumbuhkan pendidikan Islam yang berlandaskan nilai-nilai keilmuan, akhlak, dan pengabdian 
+            kepada umat.
+          </p>
+
+          <p class="sejarah-para" style="text-align: justify;">
+            Pondok Pesantren Darul Mukhlishin resmi berdiri pada tanggal 7 Syawal 1436 H bertepatan dengan 25 Juli 2015, 
+            di bawah asuhan Kyai Muchsin dan Ibu Nyai Nur Latifah. Sebelum mendirikan pesantren ini, 
+            Kyai Muchsin menempuh pendidikan di beberapa pesantren salaf terkemuka, di antaranya Pondok Pesantren 
+            Hidayatul Mubtadi-ien Tajeman Bantul di bawah asuhan KH. Muchtarom Idris, kemudian melanjutkan pendidikan 
+            di Pondok Pesantren Lirboyo Kediri Jawa Timur yang dikenal dengan tradisi pesantren salafiyahnya. Setelah itu, 
+            beliau kembali memperdalam ilmu di Pondok Pesantren Irsyadul Anam Kiyudan Sleman asuhan KH. Barmawi. 
+            Sementara itu, Ibu Nyai Nur Latifah merupakan seorang hafidzah yang pernah menimba ilmu di Pondok Pesantren 
+            Miftahul Ulum II Jejeran Wonokromo Pleret Bantul di bawah asuhan KH. Hasyim Syafi’i.
+          </p>
+
+          <p class="sejarah-para" style="text-align: justify;">
+            Sebelum mendirikan Pondok Pesantren Darul Mukhlishin, Kyai Muchsin dan Ibu Nyai Nur Latifah terlebih dahulu membantu 
+            mengasuh Pondok Pesantren Putri Hidayatul Mubtadi-aat Tajeman Bantul bersama KH. Muchtarom Idris. 
+            Berbekal pengalaman, keilmuan, dan semangat khidmah kepada agama, beliau kemudian mendirikan Pondok Pesantren 
+            Darul Mukhlishin sebagai lembaga pendidikan berbasis Al-Qur’an dan kitab klasik yang memadukan tradisi pesantren 
+            salaf dengan pendekatan modern. Seiring berjalannya waktu, majelis kecil yang dirintis dengan penuh keikhlasan 
+            tersebut berkembang menjadi pondok pesantren yang terus dipercaya masyarakat. Nama “Darul Mukhlishin” yang berarti 
+            Rumah Orang-Orang yang Ikhlas menjadi ruh dan identitas pesantren dalam mendidik santri agar senantiasa belajar dan 
+            berkhidmah karena Allah Subhanahu wa Ta’ala.
+          </p>
+
+          <p class="sejarah-para" style="text-align: justify;">
+            Sejak awal berdirinya, Pondok Pesantren Darul Mukhlishin memiliki tujuan untuk ikut berpartisipasi dalam mewujudkan tugas 
+            manusia sebagai khalifah fil ardh, yaitu dengan mencetak generasi muslim yang berilmu, beramal saleh, berakhlakul karimah, 
+            serta siap berdakwah di tengah masyarakat. Kepercayaan masyarakat yang terus bertumbuh mendorong pesantren ini berkembang 
+            hingga memiliki beberapa cabang di berbagai wilayah. Hingga saat ini, Kyai Muchsin dan Ibu Nyai Nur Latifah tetap istiqamah 
+            membimbing para santri dengan penuh keteladanan dan kasih sayang, menjaga semangat belajar serta melanjutkan perjuangan dakwah
+             dan pendidikan Islam di tengah masyarakat.
+          </p>
+
+        </div>
+
+        <div class="sejarah-closing">
+          <div class="closing-icon">🌿</div>
+          <p>
+            <strong>Darul Mukhlisihin hari ini</strong> adalah buah dari keikhlasan kemarin.
+            Dan insyaAllah, ia akan terus tumbuh — menjadi pohon yang berbuah lebat,
+            yang manfaatnya dirasakan oleh generasi demi generasi.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="vm-section">
+  <div class="container">
+
+    <div class="text-center reveal">
+      <div class="section-badge">Landasan Institusi</div>
+      <h2 class="section-title">Visi & Misi <span>Kami</span></h2>
+    </div>
+
+    <div class="vm-layout">
+
+      <div class="visi-card reveal reveal-delay-1">
+        <div class="vm-icon-lg">🎯</div>
+        <h3>Visi</h3>
+        <p>
+          Terbentuknya generasi Islam berbudi luhur dan berintlektual yang mampu menerapkan lima visi dasar pesantren yakni : berilmu, beramal sholeh, berdakwah, bersabar dan tawakal.
+        </p>
+      </div>
+
+      <div class="misi-card reveal reveal-delay-2">
+        <h3>Misi</h3>
+        <div class="misi-list">
+          <div class="misi-item">
+            <div class="misi-num">01</div>
+            <p>Menerapkan dan mengajarkan ajaran Islam secara utuh</p>
+          </div>
+          <div class="misi-item">
+            <div class="misi-num">02</div>
+            <p>Melkasanakan dan mengembangkan pendidikan berbasis pesantren
+           </div>
+          <div class="misi-item">
+            <div class="misi-num">03</div>
+            <p>Memadukan ilmu pesantren dan ilmu pengetahuan modern untuk berfikir kritis, kreatif dan inovatif terhadap perkembangan zaman.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <img src="Master Logo PPDM.png" alt="Logo Pondok"/>
+          <div class="logo-text">
+            <strong>Darul Mukhlisihin</strong>
+            <span>Pondok Pesantren Salafiyah</span>
+          </div>
+        </div>
+        <p>Membentuk generasi yang berilmu, beramal sholeh, berdakwah, bersabar dan tawakal</p>
+        <div class="socials">
+          <a href="#" class="social-btn">📸</a>
+          <a href="#" class="social-btn">▶️</a>
+          <a href="#" class="social-btn">🌐</a>
+          <a href="#" class="social-btn">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang Kami</a></li>
+          <li><a href="kegiatan.html">Kegiatan</a></li>
+          <li><a href="pendaftaran.html">Pendaftaran</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak Cepat</h4>
+        <ul>
+          <li><a href="tel:+62222345678">📞 (022) 234-5678</a></li>
+          <li><a href="https://wa.me/6281234567890">💬 WhatsApp Kami</a></li>
+          <li><a href="mailto:info@darulmukhlisihin.ac.id">✉️ Email Kami</a></li>
+          <li><a href="kontak.html">📍 Lihat Lokasi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Pesantren Darul Mukhlisihin. Hak Cipta Dilindungi.</p>
+      <span>Jomblang, Mulyodadi, Kec. Bambanglipuro, Bantul, Daerah Istimewa Yogyakarta</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
